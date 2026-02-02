@@ -1,0 +1,120 @@
+/* Container Styling */
+.ayurveda-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  text-align: left;
+  line-height: 1.8;
+  overflow-y: auto;
+  max-height: 90vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom Scrollbar Styling */
+.ayurveda-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ayurveda-container::-webkit-scrollbar-thumb {
+  background: #4e9eab;
+  border-radius: 10px;
+}
+
+.ayurveda-container::-webkit-scrollbar-thumb:hover {
+  background: #367f8e;
+}
+
+.ayurveda-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Hover effect for the container */
+.ayurveda-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Page Title */
+.ayurveda-container h1 {
+  font-size: 38px;
+  color: #4e9eab;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Section Headers */
+.ayurveda-container h2 {
+  font-size: 26px;
+  color: #3d5159;
+  margin-top: 30px;
+  border-bottom: 2px solid #4e9eab;
+  padding-bottom: 5px;
+}
+
+/* Paragraph Styling */
+.ayurveda-container p {
+  font-size: 17px;
+  color: #4f4f4f;
+  margin: 12px 0;
+  text-align: justify;
+}
+
+/* Lists */
+.ayurveda-container ul {
+  margin: 15px 0 15px 25px;
+  list-style-type: disc;
+  color: #3d5159;
+}
+
+.ayurveda-container li {
+  margin: 10px 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Blockquote for important notes */
+.ayurveda-container blockquote {
+  margin: 25px 0;
+  padding: 15px 25px;
+  background-color: #f2f9fc;
+  border-left: 5px solid #4e9eab;
+  color: #3d5159;
+  font-style: italic;
+  font-size: 17px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ayurveda-container {
+    padding: 20px;
+    margin: 30px 15px;
+    max-height: 80vh;
+  }
+
+  .ayurveda-container h1 {
+    font-size: 32px;
+  }
+
+  .ayurveda-container h2 {
+    font-size: 22px;
+  }
+
+  .ayurveda-container p,
+  .ayurveda-container li {
+    font-size: 16px;
+  }
+
+  .ayurveda-container blockquote {
+    padding: 10px 15px;
+  }
+}
+
+  

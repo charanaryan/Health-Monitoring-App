@@ -1,0 +1,158 @@
+/* Verify OTP page - standardized with other auth pages (responsive) */
+.otp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background-color: #f0f9fb; */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.app-title {
+  font-size: 36px;
+  color: #4e9eab;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #a5e9f0, 0 0 20px #a5e9f0, 0 0 30px #a5e9f0;
+  word-wrap: break-word;
+}
+
+.otp-box {
+  width: 100%;
+  max-width: 320px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background-color: #b2e2e8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.otp-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.otp-box input {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.otp-box input::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.otp-box input:focus {
+  outline: none;
+  border: 2px solid #4e9eab;
+  box-shadow: 0 0 5px rgba(78, 158, 171, 0.3);
+}
+
+.otp-box button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px;
+  background-color: #4a626a;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.otp-box button:hover {
+  background-color: #3d5159;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.otp-box button:active {
+  transform: translateY(0);
+}
+
+.otp-btn {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #4a626a;
+}
+
+.otp-btn a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.otp-btn a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .otp-box {
+    max-width: 90vw;
+    padding: 25px 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .otp-container {
+    padding: 15px;
+    min-height: 100vh;
+  }
+
+  .app-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .otp-box {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .otp-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .otp-box input {
+    padding: 10px 8px;
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+  .otp-box button {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .otp-btn {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+}
+
+  

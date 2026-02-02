@@ -1,0 +1,64 @@
+/* General container for the page */
+.assessment-container {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Page title */
+  .assessment-container h1 {
+    font-size: 32px;
+    color: #4e9eab;
+    margin-bottom: 30px;
+  }
+  
+  /* Cards container styling */
+  .assessment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Individual card styling */
+  .assessment-card {
+    background-color: #4e9eab ;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Card hover effect */
+  .assessment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #3b7178;
+  }
+  
+  /* Card title */
+  .assessment-card h3 {
+    font-size: 20px;
+    color: #f8f8f8;
+    margin: 0;
+  }
+
+
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .assessment-container {
+      padding: 15px;
+    }
+  
+    .assessment-card h3 {
+      font-size: 18px;
+    }
+  }
+  

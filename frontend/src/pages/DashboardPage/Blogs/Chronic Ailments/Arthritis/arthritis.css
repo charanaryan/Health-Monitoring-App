@@ -1,0 +1,121 @@
+/* Container Styling */
+.arthritis-container {
+  max-width: 1100px; /* Slightly wider for better readability */
+  margin: 60px auto; /* Added more margin for breathing space */
+  padding: 30px; /* Increased padding for a spacious look */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for better prominence */
+  font-family: "Arial", sans-serif;
+  text-align: left;
+  line-height: 1.8;
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+  max-height: 90vh; /* Limits height to 90% of the viewport */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+/* Custom Scrollbar Styling */
+.arthritis-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.arthritis-container::-webkit-scrollbar-thumb {
+  background: #4e9eab; /* Scrollbar color */
+  border-radius: 10px; /* Rounded edges */
+}
+
+.arthritis-container::-webkit-scrollbar-thumb:hover {
+  background: #367f8e; /* Darker color on hover */
+}
+
+.arthritis-container::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Background of the scrollbar track */
+}
+
+/* Hover effect for the container */
+.arthritis-container:hover {
+  transform: translateY(-5px); /* Subtle elevation on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Page Title */
+.arthritis-container h1 {
+  font-size: 38px; /* Slightly larger for visual impact */
+  color: #4e9eab;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase; /* Makes it more prominent */
+  letter-spacing: 1px; /* Improves readability */
+}
+
+/* Section Headers */
+.arthritis-container h2 {
+  font-size: 26px;
+  color: #3d5159;
+  margin-top: 30px;
+  border-bottom: 2px solid #4e9eab; /* Added underline for emphasis */
+  padding-bottom: 5px;
+}
+
+/* Paragraph Styling */
+.arthritis-container p {
+  font-size: 17px; /* Slightly larger for improved readability */
+  color: #4f4f4f; /* Softer color for better contrast */
+  margin: 12px 0;
+  text-align: justify; /* Aligns text evenly */
+}
+
+/* Lists */
+.arthritis-container ul {
+  margin: 15px 0 15px 25px; /* Added spacing and indentation */
+  list-style-type: disc;
+  color: #3d5159;
+}
+
+.arthritis-container li {
+  margin: 10px 0;
+  font-size: 17px; /* Matches paragraph font size */
+  line-height: 1.6; /* Better line spacing for list items */
+}
+
+/* Blockquote for important notes */
+.arthritis-container blockquote {
+  margin: 25px 0;
+  padding: 15px 25px;
+  background-color: #f2f9fc; /* Softer background for contrast */
+  border-left: 5px solid #4e9eab;
+  color: #3d5159;
+  font-style: italic;
+  font-size: 17px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Adds a light shadow for better visibility */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .arthritis-container {
+    padding: 20px;
+    margin: 30px 15px;
+    max-height: 80vh; /* Adjust height for smaller screens */
+  }
+
+  .arthritis-container h1 {
+    font-size: 32px;
+  }
+
+  .arthritis-container h2 {
+    font-size: 22px;
+  }
+
+  .arthritis-container p,
+  .arthritis-container li {
+    font-size: 16px;
+  }
+
+  .arthritis-container blockquote {
+    padding: 10px 15px;
+  }
+}
+
+
+  

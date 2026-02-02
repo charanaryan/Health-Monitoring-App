@@ -1,0 +1,120 @@
+/* General container styling */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f9fb, #b2e2e8);
+    border-radius: 15px;
+    
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #3d5159;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Back button styling */
+  .back-button {
+    background-color: #4e9eab;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #3b7d88;
+    transform: translateY(-2px);
+  }
+  
+  /* Title and subtitle styling */
+  .title {
+    font-size: 36px;
+    color: #4e9eab;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 24px;
+    color: #3d5159;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Content box styling */
+  .content-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4e9eab #e6e6e6;
+  }
+  
+  /* Scrollbar styling */
+  .content-box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .content-box::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 10px;
+  }
+  
+  .content-box::-webkit-scrollbar-thumb {
+    background: #4e9eab;
+    border-radius: 10px;
+  }
+  
+  .content-box::-webkit-scrollbar-thumb:hover {
+    background: #3b7d88;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 28px;
+    }
+  
+    .subtitle {
+      font-size: 20px;
+    }
+  
+    .content-box {
+      max-height: 250px;
+      font-size: 14px;
+    }
+  
+    .back-button {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 24px;
+    }
+  
+    .subtitle {
+      font-size: 18px;
+    }
+  }
+  
