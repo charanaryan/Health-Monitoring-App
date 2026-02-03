@@ -33,7 +33,6 @@ const Leaderboard = () => {
         }
       } catch (err) {
         setError("Error fetching leaderboard data");
-        console.error(err);
       } finally {
         setLoading(false);
       }
@@ -42,69 +41,73 @@ const Leaderboard = () => {
     fetchLeaderboard();
   }, []);
 
-  const handleViewScores = (user) => {
-    setSelectedUser(user);
-  };
-
-  const closePopup = () => {
-    setSelectedUser(null);
-  };
-
   if (loading) {
-    return <div className="leaderboard-container">Loading...</div>;
+    return (
+      <div className="leaderboard-container">
+        <div className="leaderboard">Loading...</div>
+      </div>
+    );
   }
 
   if (error) {
     return (
       <div className="leaderboard-container">
-        <h1>Error</h1>
-        <p>{error}</p>
-        <button className="back-btn" onClick={() => navigate("/dashboard")}>
-          Back to Dashboard
-        </button>
+        <div className="leaderboard">
+          <h1>Error</h1>
+          <p>{error}</p>
+          <button className="back-btn" onClick={() => navigate("/dashboard")}>
+            Back to Dashboard
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="leaderboard-container">
-      <h1>Leaderboard</h1>
-      {users.length > 0 ? (
-        <table className="leaderboard-table">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Username</th>
-              <th>Last Assessment</th>
-              <th>Overall Score</th>
-              <th>View</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={user._id}>
-                <td>{index + 1}</td>
-                <td>{user.username}</td>
-                <td>{new Date(user.updatedAt).toLocaleDateString()}</td>
-                <td>{user.scores.overallScore}</td>
-                <td>
-                  <button
-                    className="view-btn"
-                    onClick={() => handleViewScores(user)}
-                  >
-                    View
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>No users have taken the assessment yet.</p>
-      )}
-      <button className="back-btn" onClick={() => navigate("/dashboard")}>
-        Back to Dashboard
-      </button>
+      <div className="leaderboard">
+        <h1 className="leaderboard-title">Leaderboard</h1>
+
+        {users.length > 0 ? (
+          <div className="score-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Username</th>
+                  <th>Last Assessment</th>
+                  <th>Overall Score</th>
+                  <th>View</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.map((user, index) => (
+                  <tr key={user._id}>
+                    <td>{index + 1}</td>
+                    <td>{user.username}</td>
+                    <td>{new Date(user.updatedAt).toLocaleDateString()}</td>
+                    <td>{user.scores.overallScore}</td>
+                    <td>
+                      <button
+                        className="view-btn"
+                        onClick={() => setSelectedUser(user)}
+                      >
+                        View
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p>No users have taken the assessment yet.</p>
+        )}
+
+        <button className="back-btn" onClick={() => navigate("/dashboard")}>
+          Back to Dashboard
+        </button>
+      </div>
 
       {selectedUser && (
         <div className="popup-overlay">
@@ -118,15 +121,17 @@ const Leaderboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(selectedUser.scores || {}).map(([key, value]) => (
-                  <tr key={key}>
-                    <td>{key}</td>
-                    <td>{value}</td>
-                  </tr>
-                ))}
+                {Object.entries(selectedUser.scores || {}).map(
+                  ([key, value]) => (
+                    <tr key={key}>
+                      <td>{key}</td>
+                      <td>{value}</td>
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
-            <button className="close-btn" onClick={closePopup}>
+            <button className="close-btn" onClick={() => setSelectedUser(null)}>
               Close
             </button>
           </div>
@@ -137,8 +142,3 @@ const Leaderboard = () => {
 };
 
 export default Leaderboard;
-
-
-
-
-

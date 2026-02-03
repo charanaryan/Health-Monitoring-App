@@ -1,18 +1,18 @@
 /* General container styling for the Blogs page */
 .blogs-container {
-  position: absolute; /* Place it at the top */
-  top: 20px; /* Add margin from the top */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for centering */
-  max-width: 95%; /* Increase the container width (adjustable as needed) */
-  width: 1200px; /* Maximum width for larger screens */
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 95%;
+  width: 1200px;
   text-align: center;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  z-index: 100; /* Ensure it appears above other content */
+  z-index: 100;
 }
 
 /* Page title */
@@ -22,25 +22,25 @@
   margin-bottom: 30px;
 }
 
-/* Blog cards container styling */
+/* Blog cards container */
 .blog-cards {
-  display: flex; /* Use flexbox to make it horizontal */
-  justify-content: center; /* Center align the cards */
-  gap: 20px; /* Add space between cards */
-  flex-wrap: wrap; /* Allow wrapping to the next line on smaller screens */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Blog card styling */
+/* Blog card */
 .blog-card {
   background-color: #4e9eab;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  position: relative; /* For dropdown positioning */
+  position: relative;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 250px; /* Set a fixed width for uniformity */
+  width: 250px;
 }
 
 .blog-card:hover {
@@ -57,7 +57,7 @@
   padding-bottom: 10px;
 }
 
-/* Dropdown menu styling */
+/* Dropdown menu */
 .dropdown-menu {
   display: none;
   list-style: none;
@@ -75,12 +75,12 @@
   z-index: 10;
 }
 
-/* Show dropdown on hover */
+/* Show dropdown */
 .blog-card:hover .dropdown-menu {
   display: block;
 }
 
-/* Dropdown item styling */
+/* Dropdown items */
 .dropdown-item {
   padding: 10px 15px;
   text-align: left;
@@ -95,24 +95,29 @@
   color: #4e9eab;
 }
 
-/* Responsive design for smaller screens */
+/* ========================= */
+/* ONLY MOBILE FIX — NOTHING ELSE */
+/* ========================= */
 @media (max-width: 768px) {
   .blogs-container {
     padding: 15px;
-    width: 100%; /* Use full width on smaller screens */
+    width: 100%;
   }
 
   .blog-card {
-    width: 100%; /* Make cards full width on smaller screens */
+    width: 100%;
   }
 
   .blog-card h3 {
     font-size: 18px;
   }
 
-  .blog-cards {
-    flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
+  /* FIX: dropdown should flow normally on mobile */
+  .dropdown-menu {
+    position: static;        /* 🔥 KEY FIX */
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: none;
   }
 }
-
-  

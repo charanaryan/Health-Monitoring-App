@@ -3,13 +3,21 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
 }
 
+/* ========================= */
+/* FIX: MAIN CONTAINER LINK  */
+/* ========================= */
+.leaderboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 10px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* EXISTING STYLES — UNTOUCHED */
 .leaderboard {
   position: relative;
   width: 90%;
@@ -19,6 +27,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 40px 20px 20px;
   text-align: center;
+  overflow-x: hidden; /* FIX: prevent layout break */
 }
 
 .back-btn {
@@ -46,36 +55,6 @@ body {
   color: #003a4d;
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #e8f8fc;
-  text-align: left;
-}
-
-.avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #d9d9d9;
-  margin-right: 15px;
-}
-
-.user-details h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #003a4d;
-}
-
-.user-details p {
-  margin: 0;
-  font-size: 1rem;
-  color: #666;
-}
-
 .score-table {
   overflow-x: auto;
   margin-top: 20px;
@@ -94,7 +73,7 @@ table th {
   background-color: #397d86;
   color: white;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   padding: 12px 15px;
 }
 
@@ -102,6 +81,7 @@ table td {
   padding: 12px 15px;
   color: #333;
   border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
 table tr:nth-child(even) {
@@ -137,6 +117,7 @@ table tr:last-child td {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 .popup-content {
@@ -145,6 +126,10 @@ table tr:last-child td {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .close-btn {
@@ -169,12 +154,29 @@ table tr:last-child td {
 .user-details-table td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .user-details-table th {
   background-color: #316a74;
   font-weight: bold;
+}
+
+/* MOBILE — STRICTLY LEADERBOARD */
+@media (max-width: 768px) {
+  .score-table {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  .back-btn {
+    position: static;
+    margin-top: 15px;
+    width: 100%;
+  }
 }
 
 
